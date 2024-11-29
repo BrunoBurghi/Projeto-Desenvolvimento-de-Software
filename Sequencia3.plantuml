@@ -1,0 +1,21 @@
+@startuml
+actor Usuario
+entity Sistema
+entity Categoria
+entity Atividade
+Usuario -> Sistema: Solicitar registro de atividade
+Sistema -> Categoria: Exibir categorias predefinidas
+Categoria --> Sistema: Lista de categorias
+Usuario -> Sistema: Escolher categoria e fornecer detalhes
+Sistema -> Atividade: Validar dados e armazenar atividade
+Atividade --> Sistema: Confirmação de registro
+Sistema -> Usuario: Confirmar registro e exibir impacto
+
+alt Dados ausentes
+    Sistema -> Usuario: Solicitar preenchimento de informações
+end
+
+alt Categoria inválida
+    Sistema -> Usuario: Sugerir categorias válidas
+end
+@enduml

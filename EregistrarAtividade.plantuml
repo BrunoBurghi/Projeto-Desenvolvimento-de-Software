@@ -1,0 +1,14 @@
+@startuml Registrar Atividades
+[*] --> ColetandoAtividades
+
+ColetandoAtividades : Sistema coleta as atividades registradas pelo usuário no dia
+ColetandoAtividades --> CalculandoPontuacao
+CalculandoPontuacao : Calcula a pontuação baseada em critérios predefinidos
+CalculandoPontuacao --> ArmazenandoPontuacao
+ArmazenandoPontuacao : Armazena a pontuação no histórico do usuário
+ArmazenandoPontuacao --> [*]
+
+ColetandoAtividades --> InformandoSemDados : Nenhuma atividade registrada
+InformandoSemDados : Informa que não há dados para cálculo
+InformandoSemDados --> [*]
+@enduml

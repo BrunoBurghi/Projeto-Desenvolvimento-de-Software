@@ -1,0 +1,16 @@
+@startuml Conectar Profissionais
+[*] --> AcessandoConectarProfissionais
+
+AcessandoConectarProfissionais : Usuário acessa a opção "Conectar-se com Profissionais"
+AcessandoConectarProfissionais --> ExibindoListaProfissionais
+ExibindoListaProfissionais : Sistema exibe lista de profissionais disponíveis
+
+ExibindoListaProfissionais --> SelecionandoProfissional : Profissionais disponíveis
+SelecionandoProfissional : Usuário seleciona um profissional
+SelecionandoProfissional --> AgendandoConsulta : Agenda consulta ou entra em contato
+AgendandoConsulta --> [*]
+
+ExibindoListaProfissionais --> SugereLigar188 : Nenhum profissional disponível
+SugereLigar188 : Sugere que o usuário ligue para o número 188
+SugereLigar188 --> [*]
+@enduml

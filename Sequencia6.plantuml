@@ -1,0 +1,15 @@
+@startuml
+actor Usuario
+entity Sistema
+entity Profissional
+Usuario -> Sistema: Acessar opção de conexão
+Sistema -> Profissional: Consultar profissionais disponíveis
+Profissional --> Sistema: Lista de profissionais
+Sistema -> Usuario: Exibir informações dos profissionais
+Usuario -> Sistema: Selecionar profissional e agendar/entrar em contato
+Sistema -> Usuario: Confirmar agendamento ou contato
+
+alt Nenhum profissional disponível
+    Sistema -> Usuario: Sugerir número 188
+end
+@enduml

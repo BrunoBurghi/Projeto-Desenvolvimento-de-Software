@@ -1,0 +1,16 @@
+@startuml
+actor Usuario
+entity Sistema
+entity Atividade
+entity RelatorioBemEstar
+Usuario -> Sistema: Solicitar relatório
+Sistema -> Atividade: Obter atividades registradas
+Atividade --> Sistema: Lista de atividades
+Sistema -> RelatorioBemEstar: Enviar atividades
+RelatorioBemEstar --> Sistema: Pontuação e feedback
+Sistema -> Usuario: Exibir relatório com feedback
+
+alt Nenhuma atividade registrada
+    Sistema -> Usuario: Mostrar mensagem incentivando registro
+end
+@enduml

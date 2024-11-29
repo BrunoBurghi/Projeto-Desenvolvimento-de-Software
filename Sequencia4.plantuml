@@ -1,0 +1,13 @@
+@startuml
+actor Sistema
+entity Atividade
+entity Historico
+Sistema -> Atividade: Obter atividades registradas
+Atividade --> Sistema: Lista de atividades
+Sistema -> Sistema: Calcular pontuação
+Sistema -> Historico: Armazenar pontuação
+
+alt Nenhuma atividade registrada
+    Sistema -> Usuario: Informar ausência de dados para cálculo
+end
+@enduml

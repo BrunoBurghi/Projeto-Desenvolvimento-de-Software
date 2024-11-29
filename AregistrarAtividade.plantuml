@@ -1,0 +1,20 @@
+@startuml registrarAtividade
+start
+:Usuário seleciona a opção "Registrar Atividade";
+:Sistema exibe categorias predefinidas;
+:Usuário fornece detalhes da atividade;
+:Sistema valida os dados;
+
+if (Dados ausentes?) then (sim)
+  :Solicita que o usuário insira as informações faltantes;
+else (não)
+  :Armazena a atividade no histórico;
+endif
+
+if (Categoria inválida?) then (sim)
+  :Informa ao usuário e sugere categorias válidas;
+endif
+
+stop
+@enduml
+ 

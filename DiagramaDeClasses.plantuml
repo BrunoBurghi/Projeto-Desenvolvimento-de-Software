@@ -1,0 +1,64 @@
+@startuml Classes
+' Definição das classes principais e seus atributos e métodos
+
+class Usuario {
+  # int id
+  # String nome
+  # String email
+  # String senha
+}
+
+class Paciente {
+  - List atividades
+  - List historicoPontuacoes
+  + registrar()
+  + autenticar()
+  + registrarAtividade(atividade: Atividade)
+  + gerarRelatorio()
+  + contatarProfissional()
+}
+
+class Atividade {
+  - int id
+  - String descricao
+  - Categoria categoria
+  - int duracao
+  - float impactoBemEstar
+  + calcularImpacto()
+}
+
+class RelatorioBemEstar {
+  - int id
+  - float pontuacaoTotal
+  + gerarPontuacao()
+  + exibirRelatorio()
+}
+
+class Profissional {
+  - List usuariosAtivo
+  + recomendarAtividade()
+}
+
+class Login {
+  + iniciarSessao(Paciente: Paciente)
+  + iniciarSessao(profissional: Profissional)
+}
+
+' Enumeração para Categoria
+enum Categoria {
+  + Exercicios
+  + Lazer
+  + Trabalho
+  + Social
+  + Domestico
+}
+
+' Definindo relações entre as classes
+Pessoa <|-- Paciente
+Pessoa <|-- Profissional
+Paciente --> "1" RelatorioBemEstar
+Paciente "1..*" --> "0..*" Atividade
+Paciente --> Login : usa
+Profissional "1" --> "0..*" Paciente : PacientesAtivo
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml Conectar Profissionais
+start
+:Usuário acessa a opção "Conectar-se com Profissionais";
+:Sistema exibe lista de profissionais disponíveis;
+
+if (Nenhum profissional disponível?) then (sim)
+  :Sugere que o usuário ligue para o número 188;
+else (não)
+  :Usuário seleciona um profissional;
+  :Agenda consulta ou entra em contato;
+endif
+
+stop
+@enduml

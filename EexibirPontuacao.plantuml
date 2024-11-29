@@ -1,0 +1,15 @@
+@startuml Exibir Pontuação
+[*] --> SolicitandoVisualizacao
+
+SolicitandoVisualizacao : Usuário solicita a visualização do histórico
+SolicitandoVisualizacao --> ExibindoGrafico
+ExibindoGrafico : Sistema exibe gráfico com as pontuações diárias ao longo do tempo
+ExibindoGrafico --> ExibindoDetalhes
+ExibindoDetalhes : Inclui informações detalhadas sobre os dias com maiores e menores pontuações
+ExibindoDetalhes --> [*]
+
+SolicitandoVisualizacao --> InformandoSemDados : Nenhuma pontuação registrada
+InformandoSemDados : Informa que ainda não há dados disponíveis
+InformandoSemDados --> [*]
+@enduml
+

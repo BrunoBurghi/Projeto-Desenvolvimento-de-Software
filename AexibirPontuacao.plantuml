@@ -1,0 +1,12 @@
+@startuml Exibir Pontuação
+start
+:Usuário solicita a visualização do histórico;
+:Sistema exibe gráfico com as pontuações diárias ao longo do tempo;
+:Inclui informações detalhadas sobre os dias com maiores e menores pontuações;
+
+if (Nenhuma pontuação registrada?) then (sim)
+  :Informa que ainda não há dados disponíveis;
+endif
+
+stop
+@enduml

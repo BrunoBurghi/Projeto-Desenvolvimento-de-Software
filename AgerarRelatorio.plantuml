@@ -1,0 +1,15 @@
+@startuml gerarRelatorio
+start
+:Usuário solicita o relatório;
+:Sistema compila as atividades registradas;
+:Calcula a pontuação de bem-estar;
+:Exibe o relatório com feedback personalizado;
+
+if (Nenhuma atividade registrada?) then (sim)
+  :Exibe mensagem incentivando o registro;
+else (não)
+  :Exibe relatório;
+endif
+
+stop
+@enduml

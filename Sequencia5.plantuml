@@ -1,0 +1,13 @@
+@startuml
+actor Usuario
+entity Sistema
+entity RelatorioBemEstar
+Usuario -> Sistema: Solicitar histórico de pontuação
+Sistema -> RelatorioBemEstar: Obter dados históricos
+RelatorioBemEstar --> Sistema: Dados históricos
+Sistema -> Usuario: Exibir gráfico e informações detalhadas
+
+alt Nenhuma pontuação registrada
+    Sistema -> Usuario: Informar ausência de pontuações
+end
+@enduml

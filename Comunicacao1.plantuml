@@ -1,0 +1,19 @@
+@startuml
+participant Usuário
+participant Sistema
+participant BancoDeDados
+participant MotorDeRegras
+
+Usuário -> Sistema: Solicita relatório de bem-estar
+Sistema -> BancoDeDados: Busca atividades
+BancoDeDados -> Sistema: Retorna atividades
+Sistema -> MotorDeRegras: Calcula pontuação
+MotorDeRegras -> Sistema: Retorna pontuação
+Sistema -> RelatórioBemEstar: Gera relatório
+RelatórioBemEstar -> Sistema: Retorna relatório
+Sistema -> Usuário: Exibe relatório
+
+alt Nenhuma atividade encontrada
+    Sistema -> Usuário: Informa que não há dados suficientes
+end
+@enduml

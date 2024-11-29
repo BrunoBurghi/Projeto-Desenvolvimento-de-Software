@@ -1,0 +1,17 @@
+@startuml gerarRelatorio
+[*] --> SolicitandoRelatorio
+
+SolicitandoRelatorio : Usuário solicita o relatório
+SolicitandoRelatorio --> CompilandoAtividades : Atividades registradas
+CompilandoAtividades : Sistema compila as atividades registradas
+CompilandoAtividades --> CalculandoPontuacao
+CalculandoPontuacao : Calcula a pontuação de bem-estar
+CalculandoPontuacao --> ExibindoRelatorio
+
+ExibindoRelatorio : Exibe o relatório com feedback personalizado
+ExibindoRelatorio --> [*]
+
+ExibindoRelatorio --> ExibindoMensagem : Nenhuma atividade registrada
+ExibindoMensagem : Exibe mensagem incentivando o registro
+ExibindoMensagem --> [*]
+@enduml

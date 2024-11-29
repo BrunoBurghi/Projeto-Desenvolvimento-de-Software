@@ -1,0 +1,12 @@
+@startuml Calcular Pontuação
+start
+:Sistema coleta as atividades registradas pelo usuário no dia;
+:Calcula a pontuação baseada em critérios predefinidos;
+:Armazena a pontuação no histórico do usuário;
+
+if (Nenhuma atividade registrada?) then (sim)
+  :Informa que não há dados para cálculo;
+endif
+
+stop
+@enduml
